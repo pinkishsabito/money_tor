@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from sqlalchemy import create_engine
-from src.transaction.models import Base
+from src.user.models import Base
 from src.utils import DB_URL
 
 app = FastAPI()
