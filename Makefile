@@ -1,3 +1,6 @@
+run:
+	uvicorn main:app --reload
+
 build:
 	docker compose -f docker-compose.local.yml build
 
