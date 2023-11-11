@@ -1,4 +1,4 @@
-from sqlalchemy import VARCHAR, TIMESTAMP, ForeignKey
+from sqlalchemy import TIMESTAMP, VARCHAR, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import mapped_column
 

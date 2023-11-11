@@ -1,4 +1,4 @@
-from sqlalchemy import VARCHAR, TIMESTAMP, ForeignKey, INTEGER
+from sqlalchemy import INTEGER, TIMESTAMP, VARCHAR, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import mapped_column
 
@@ -23,7 +23,9 @@ class Transaction(Base):
     __tablename__ = "transactions"
 
     id = mapped_column(VARCHAR(36), primary_key=True, nullable=False)
-    from_id = mapped_column(VARCHAR(36), ForeignKey("legal_entities.id"), nullable=False)
+    from_id = mapped_column(
+        VARCHAR(36), ForeignKey("legal_entities.id"), nullable=False
+    )
     to_id = mapped_column(VARCHAR(36), ForeignKey("legal_entities.id"), nullable=False)
     amount = mapped_column(INTEGER, nullable=False)
     currency = mapped_column(VARCHAR(5), ForeignKey("currencies.name"), nullable=False)
